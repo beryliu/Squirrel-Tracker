@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from .models import Squirrel
-
+import random
 # Create your views here.
 
 
 def map_(request):
-    Squirres = Squirres.object.all()[:100] 
+    sightings = Squirrel.objects.all() 
     context = {
-            "Squirres": Squirres
+            "sightings": sightings
             }
     return render(request, 'sightings/map.html', context) 
