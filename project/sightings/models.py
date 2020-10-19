@@ -14,6 +14,9 @@ class Squirrel(models.Model):
     Unique_Squirrel_ID = models.CharField(
         max_length=100,
         help_text=_('Unique squirrel id'),
+        primary_key=True,
+        unique=True,
+        default=None,
     )
 
     PM = 'PM'
@@ -32,7 +35,6 @@ class Squirrel(models.Model):
     Date = models.DateField(
             help_text=_('Concatenation of the sighting session day and month: yyyy-mm-dd'),
             blank=True,
-
     )
 
     ADULT = 'Adult'
@@ -204,6 +206,4 @@ class Squirrel(models.Model):
 
     def __str__(self):
         return self.Unique_Squirrel_ID
-
-    
 
