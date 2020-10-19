@@ -5,7 +5,7 @@ import random
 
 
 def map_(request):
-    sightings = Squirrel.objects.all() 
+    sightings = Squirrel.objects.all()[:50] 
     context = {
             "sightings": sightings
             }
