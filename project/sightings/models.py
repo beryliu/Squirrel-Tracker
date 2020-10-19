@@ -30,8 +30,8 @@ class Squirrel(models.Model):
     )
 
     Date = models.DateField(
-        help_text=_('Concatenation of the sighting session day and month'),
-        blank=True,
+            help_text=_('Concatenation of the sighting session day and month: yyyy-mm-dd'),
+            blank=True,
 
     )
 

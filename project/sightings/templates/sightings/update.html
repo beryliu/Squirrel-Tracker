@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Squirrel Tracking Website</title>
+    <title>Squirrel Tracking Project</title>
   </head>
-  
-  
   <body>
-
-   <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: lightblue;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: lightblue;">
         <a class="navbar-brand" href=" ">Squirrels Tracker</a >
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="?">Sightings <span class="sr-only">(current)</span></a >
+              <a class="nav-link" href="/sightings">Sightings<span class="sr-only">(current)</span></a >
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/sightings/add">Add</a >
@@ -35,42 +32,19 @@
           </ul>
         </div>
      </nav>
-
-  <main role="main" class="container" style = "background;">
- <div class="starter-template">
- <br>
- <br>
- <h1></h1>
- <br>
-   <img
-            src="https://ichef.bbci.co.uk/news/800/cpsprodpb/3AA6/production/_109241051_mediaitem109241050.jpg"
-            alt="Squirrels Logo" class="logo" width="300" height="250" />
- <br>
-
- <hr size="15" width="100%" color="white">
-
-  <table class="table table-sm table-striped  table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Squirrel ID(UNIQUE)</th>
-      <th scope="col">Date</th>
-    </tr>
-  </thead>
-  <tbody>
- {% for s in squirrels %}
- <tr>
-	 <td><a href="{% url 'sightings:update' s.Unique_Squirrel_ID %}">{{ s.Unique_Squirrel_ID }}</a ></td>
-      <td>{{s.Date}}</td>
-      
-    </tr>
- {% endfor %}
-  </tbody>
-</table>
- <br> 
-  
- </div>
- </main>
- <style>
+      <main role="main">
+        <div class = "jumbotron" style="background-color: rgba(255, 255, 128, .5);">
+          
+            <h1 class="display-5">Update Sighting</h1>
+              <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <br>
+                  <input class="btn btn-primary btn-lg" type="submit" name="Submit" value="Update Sighting">
+            </form>
+        </div>
+      </main>
+       <style>
 .footer {
   position: fixed;
   left: 0;
@@ -81,11 +55,8 @@
   text-align: center;
 }
 </style>
-
 <div class="footer">
   <p>Designed by Nianbin Liu & Zhanbo Peng</p >
 </div>
- 
-    
   </body>
 </html>
