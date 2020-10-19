@@ -4,6 +4,14 @@ import random
 # Create your views here.
 
 
+def index(request):
+    squirrels = Squirrel.objects.all()
+    context = {
+        'squirrels': squirrels,
+    }
+
+    return render(request, 'sightings/index.html', context)
+
 def map_(request):
     sightings = Squirrel.objects.all()[:50] 
     context = {
