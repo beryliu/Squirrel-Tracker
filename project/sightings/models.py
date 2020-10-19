@@ -32,6 +32,7 @@ class Squirrel(models.Model):
     Date = models.DateField(
         help_text=_('Concatenation of the sighting session day and month'),
         blank=True,
+
     )
 
     ADULT = 'Adult'
@@ -85,59 +86,124 @@ class Squirrel(models.Model):
         blank=True,
     )
 
-    Running = models.BooleanField(
+    TRUE = 'True'
+    FALSE = 'False'
+    CHOICES = [
+        (TRUE, _('True')),
+        (FALSE, _('False')),
+    ]
+
+    Running = models.CharField(
+        max_length=15,
+        choices=CHOICES,
         help_text=_('Whether squirrel was seen running'),
-    )
-
-    Chasing = models.BooleanField(
-         help_text=_('Whether squirrel was seen chasing another squirrel'),
-    )
-
-    Climbing = models.BooleanField(
-         help_text=_('Whether squirrel was seen climbing a tree or other environmental landmark'),
-    )
-
-    Eating = models.BooleanField(
-         help_text=_('Whether squirrel was seen eating'),
-    )
-
-    Foraging = models.BooleanField(
-         help_text=_('Whether squirrel was seen foraging for food'),
-    )
-
-    Other_Activities = models.TextField(
+        null=True,
         blank=True,
     )
 
-    Kuks = models.BooleanField(
-         help_text=_('Whether squirrel was heard kukking'),
+    Chasing = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen chasing another squirrel'),
     )
 
-    Quaas = models.BooleanField(
-         help_text=_('Whether squirrel was heard quaaing'),
+    Climbing = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen climbing a tree or other environmental landmark'),
     )
 
-    Moans = models.BooleanField(
-         help_text=_('Whether squirrel was heard moaning'),
+    Eating = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen eating'),
     )
 
-    Tail_flags = models.BooleanField(
-         help_text=_('Whether squirrel was seen flagging its tail'),
+    Foraging = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen foraging for food'),
+    )
+    
+    Other_Activities = models.TextField(
+        blank=True,
+        null=True,
     )
 
-    Tail_twitches = models.BooleanField(
-         help_text=_('Whether squirrel was seen twitching its tail'),
+    Kuks = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was heard kukking'),
     )
 
-    Approaches = models.BooleanField(
-         help_text=_('Whether squirrel was seen approaching human, seeking food'),
+    Quaas = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was heard quaaing'),
+    )
+    
+    Moans = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was heard moaning'),
     )
 
-    Indifferent = models.BooleanField(
-         help_text=_('Whether squirrel was indifferent to human presence'),
+    Tail_flags = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen flagging its tail'),
     )
 
-    Runs_from = models.BooleanField(
-         help_text=_('Whether squirrel was seen running from humans, seeing them as a threat'),
-         )
+    Tail_twitches = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen twitching its tail'),
+    )
+
+    Approaches = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen approaching human, seeking food'),
+    )
+   
+    Indifferent = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was indifferent to human presence'),
+    )
+  
+    Runs_from = models.CharField(
+        max_length=15,
+        choices=CHOICES,
+        null=True,
+        blank=True,
+        help_text=_('Whether squirrel was seen running from humans, seeing them as a threat'),
+    )
+
+    def __str__(self):
+        return self.Unique_Squirrel_ID
+
+    
 
