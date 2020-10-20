@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
+from django.contrib import messages
 from .models import Squirrel
 from .forms import Form
 import random
 import json
-
 
 def index(request):
     squirrels = Squirrel.objects.all()
