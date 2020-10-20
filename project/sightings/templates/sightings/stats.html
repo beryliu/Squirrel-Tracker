@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Squirrel Tracking Project</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: lightblue;">
+        <a class="navbar-brand" href="#">Squirrels Tracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/sightings/">Sightings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/sightings/add">Add</a>
+            </li>
+            <li class="nav-item activate">
+                <a class="nav-link" href="/sightings/stats">Statistics<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map/">Map</a>
+            </li>
+          </ul>
+        </div>
+     </nav>
+      <main role="main">
+        <div class = "jumbotron" style="background-color: rgba(255, 255, 128, .5);">
+          
+            <h1 class="display-5">Squirrels Sighting Statistics</h1>
+	    <h4>There were {% autoescape on %}{{sightings_sum}}{% endautoescape %} squirrels sighted in central park in 2018</h4>
+	    <br>
+	    <br>
+	    <br>
+	    <li style="color:Red" value='100'>Class by Age:</li>
+
+	   <h4>{% autoescape on %}{{sightings_adult}}{% endautoescape %} were adult</h4>
+	   <h4>{% autoescape on %}{{sightings_juvenile}}{% endautoescape %} were juvenile</h4>
+	   <br>
+	   <li style="color:Red">Class by Shift:</li>
+	   <h4>{% autoescape on %}{{sightings_am}}{% endautoescape %} were discovered in the morning</h4>
+           <h4>{% autoescape on %}{{sightings_pm}}{% endautoescape %} were discovered on afternoon</h4>
+	   <br>
+	   <li style="color:Red">Class by sighting location:</li>
+           <h4>{% autoescape on %}{{sightings_location_G}}{% endautoescape %} were discovered on ground plane</h4>
+           <h4>{% autoescape on %}{{sightings_location_F}}{% endautoescape %} were discovered above ground</h4>
+	   <br>
+	   <li style="color:Red">Class by primary color:</li>
+	   <h4>{% autoescape on %}{{sightings_c_G}}{% endautoescape %} were gray</h4>
+           <h4>{% autoescape on %}{{sightings_c_C}}{%endautoescape %} were cinnamon</h4>
+	   <h4>{% autoescape on %}{{sightings_c_B}}{%endautoescape %} were black</h4>
+        </div>
+      </main>
+      	<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+}
+</style>
+<div class="footer">
+  <p>Designed by Nianbin Liu & Zhanbo Peng</p>
+</div>
+  </body>
+</html>

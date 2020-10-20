@@ -4,6 +4,8 @@ from .models import Squirrel
 from .forms import Form
 import random
 import json
+from django.db.models import Count
+from django.db.models import Avg
 
 
 def index(request):
@@ -52,4 +54,29 @@ def map_(request):
     context = {
             "sightings": sightings
             }
-    return render(request, 'sightings/map.html', context) 
+    return render(request, 'sightings/map.html', context)
+
+def stats(request):
+    sightings_sum = Squirrel.objects.count()
+    sightings_adult = Squirrel.objects.filter(Age='Adult').count()
+    sightings_juvenile = Squirrel.objects.filter(Age='Juvenile').count()
+    sightings_am = Squirrel.objects.filter(Shift='AM').count()
+    sightings_pm = Squirrel.objects.filter(Shift='PM').count()
+    sightings_location_G = Squirrel.objects.filter(Location='Ground Plane').count()
+    sightings_location_F = Squirrel.objects.filter(Location='Above Ground').count()
+    sightings_c_G = Squirrel.objects.filter(Primary_Fur_Color='Gray').count()
+    sightings_c_C = Squirrel.objects.filter(Primary_Fur_Color='Cinnamon').count()
+    sightings_c_B = Squirrel.objects.filter(Primary_Fur_Color='Black').count()
+    context = {
+            'sightings_sum':sightings_sum ,
+            'sightings_adult':sightings_adult,
+            'sightings_juvenile':sightings_juvenile,
+            'sightings_am':sightings_am,
+            'sightings_pm':sightings_pm,
+            'sightings_location_G':sightings_location_G,
+            'sightings_location_F':sightings_location_F,
+            'sightings_c_B':sightings_c_B,
+            'sightings_c_C':sightings_c_C,
+            'sightings_c_G':sightings_c_G,
+            }
+    return render(request,'sightings/stats.html',context)
