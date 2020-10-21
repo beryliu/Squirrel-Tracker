@@ -1,11 +1,17 @@
 # Squirrel-Tracker
-This is the final project for IEOR 4501, tools for analytics. 
+
+This is the final project for IEORE4501 Tools for Analytics, Columbia University.
+
 
 # Project Description
-Thanks to the data provided by The Squirrel Census, we can conduct this Django-based web application, which aims to publicize the sightings of squirrels in Central Park.  This project used data solely in 2018, so the sightings may have a variation. 
-This web application includes view sightings, add sightings, view through a map, and update or correct existing data.  
 
-# Contribution
+This is a web application developed with Django framework designed to keep track of all the known squirrels. The application can import/export the 2018 Central Park Squirrel Census data using the management commands and the users are allowed to add, update, and view squirrel data. The web application also includes a map view that displays the location of all the squirrel sightings and a view that provides some general statistics about the sightings.
+ 
+
+# Contributors
+
+Nianbin Liu & Zhanbo Peng
+
 Group Name: Project Group 37
 
 UNIs: [nl2736, zp2226]
