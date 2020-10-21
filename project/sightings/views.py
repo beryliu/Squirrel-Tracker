@@ -67,6 +67,8 @@ def stats(request):
     sightings_c_G = Squirrel.objects.filter(Primary_Fur_Color='Gray').count()
     sightings_c_C = Squirrel.objects.filter(Primary_Fur_Color='Cinnamon').count()
     sightings_c_B = Squirrel.objects.filter(Primary_Fur_Color='Black').count()
+    sightings_x = Squirrel.objects.aggregate(x=Avg('X'))
+    sightings_y = Squirrel.objects.aggregate(y=Avg('Y'))
     context = {
             'sightings_sum':sightings_sum ,
             'sightings_adult':sightings_adult,
@@ -78,5 +80,8 @@ def stats(request):
             'sightings_c_B':sightings_c_B,
             'sightings_c_C':sightings_c_C,
             'sightings_c_G':sightings_c_G,
+            'sightings_x':sightings_x,
+            'sightings_y':sightings_y,
+
             }
     return render(request,'sightings/stats.html',context)
