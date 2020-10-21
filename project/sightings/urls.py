@@ -5,6 +5,7 @@ from django.conf.urls import url
 app_name = 'sightings'
 
 urlpatterns =[
+    path('', views.index, name='index'),
     path('sightings/', views.index, name='index'),
     path('sightings/add/', views.add, name='add'),
     path('sightings/stats/', views.stats, name='stats'),
