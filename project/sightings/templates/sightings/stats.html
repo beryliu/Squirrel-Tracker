@@ -36,33 +36,33 @@
       <main role="main">
         <div class = "jumbotron" style="background-color: rgba(255, 255, 128, .5);">
           
-            <h2>Squirrel Statistics of Sightings<img
+            <h2>Statistics of Squirrel Sightings<img
               src="https://s3.envato.com/files/284043572/Smart%20Squirrel%20SET/smart-squirrel%20transparent%20png.png"
               width="200" height="250"/></h2>
 	    <h5>There were {% autoescape on %}{{sightings_sum}}{% endautoescape %} squirrels sighted in central park in 2018</h5>
 	    <br>
 	    <br>
 	    <br>
-	    <h5> <li style="color:Red" value='100'>Class by Age:</li></h5>  
+	    <h5> <li style="color:Brown" value='100'>Class by Age:</li></h5>  
 	   <h6>{% autoescape on %}{{sightings_adult}}{% endautoescape %} were adult</h6>
 	   <h6>{% autoescape on %}{{sightings_juvenile}}{% endautoescape %} were juvenile</h6>
 	   <br>
-	   <h5> <li style="color:Red">Class by Shift:</li></h5>
+	   <h5> <li style="color:Brown">Class by Shift:</li></h5>
 	   <h6>{% autoescape on %}{{sightings_am}}{% endautoescape %} were discovered in the morning</h6>
            <h6>{% autoescape on %}{{sightings_pm}}{% endautoescape %} were discovered on afternoon</h6>
 	   <br>
-	   <h5><li style="color:Red">Class by sighting location:</li></h5>
+	   <h5><li style="color:Brown">Class by sighting location:</li></h5>
            <h6>{% autoescape on %}{{sightings_location_G}}{% endautoescape %} were discovered on ground plane</h6>
            <h6>{% autoescape on %}{{sightings_location_F}}{% endautoescape %} were discovered above ground</h6>
            <br>
-	   <h5><li style="color:Red">Class by primary color:</li></h5>
+	   <h5><li style="color:Brown">Class by primary color:</li></h5>
 	   <h6>{% autoescape on %}{{sightings_c_G}}{% endautoescape %} were gray</h6>
            <h6>{% autoescape on %}{{sightings_c_C}}{%endautoescape %} were cinnamon</h6>
 	   <h6>{% autoescape on %}{{sightings_c_B}}{%endautoescape %} were black</h6>
 	   <br>
-           <h5><li style="color:Red">Class by primary color:</li></h5>
-           <h6>{{sightings_x.x}} is the average longitude that sighting squirrels</h6>
-           <h6>{{sightings_y.y}} is the average latitude that sighting squirrels/h6>
+           <h5><li style="color:Brown">Average Location:</li></h5>
+           <h6>{{sightings_x.x}} is the average longitude of the sightings</h6>
+           <h6>{{sightings_y.y}} is the average latitude of the sightings</h6>
         </div>
       </main>
       	<style>
