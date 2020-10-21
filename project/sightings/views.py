@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, JsonResponse
-from django.contrib import messages
+from django.http import HttpResponse
 from .models import Squirrel
 from .forms import Form
-import random
-import json
 from django.db.models import Count
 from django.db.models import Avg
 
