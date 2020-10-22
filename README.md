@@ -11,7 +11,7 @@ This is a web application developed with Django framework designed to keep track
 $ python manage.py import_squirrel_data /path/to/file.cs
 ```
 
-,and export the data using the management command:
+and export the data using the management command:
 
 ```
 $ python manage.py export_squirrel_data /path/to/file.cs
