@@ -47,7 +47,7 @@ def add(request):
 
 
 def map_(request):
-    sightings = Squirrel.objects.all()[:50] 
+    sightings = Squirrel.objects.all() 
     context = {
             "sightings": sightings
             }
